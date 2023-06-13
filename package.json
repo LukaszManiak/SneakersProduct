@@ -1,0 +1,19 @@
+{
+  "name": "ecommerce-product-page-main",
+  "version": "1.0.0",
+  "description": "E-commerce product page ",
+  "default": "index.html",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "copyfiles -u 1 images/* dist && parcel build index.html --dist-dir ./dist"
+  },
+  "author": "Lukasz Maniak",
+  "license": "ISC",
+  "devDependencies": {
+    "copyfiles": "^2.4.1",
+    "parcel": "^2.9.1"
+  },
+  "dependencies": {
+    "node-sass": "^9.0.0"
+  }
+}
