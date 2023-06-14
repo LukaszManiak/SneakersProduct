@@ -5,6 +5,7 @@ const navOpen = document.querySelector('.nav-open-btn');
 const navClose = document.querySelector('.nav-close-btn');
 const navWhiteBg = document.querySelector('.nav-white-bg');
 const navDarkBg = document.querySelector('.nav-dark-bg');
+const darkBg = document.querySelector('.dark-bg');
 
 const addProductCount = document.querySelector('.add-count-button');
 const removeProductCount = document.querySelector('.remove-count-button');
@@ -21,12 +22,15 @@ const thumbnailsContainer = document.querySelector(
   '.thumbnails-images-container'
 );
 
-const imagesContainer = document.querySelector('.product-images-container');
 const allThumbnails = document.querySelectorAll('.product-thumbnail');
 
-const productImage = document.querySelector('.product-image');
-const nextBtn = document.querySelector('.next-btn');
-const prevBtn = document.querySelector('.prev-btn');
+const allProductImages = document.querySelectorAll('.product-image');
+const allNextBtn = document.querySelectorAll('.next-btn');
+const allPrevBtn = document.querySelectorAll('.prev-btn');
+
+const mainImage = document.querySelector('.main-image');
+
+const imagesModal = document.querySelector('.images-modal');
 
 // nav menu
 
@@ -138,27 +142,37 @@ cartBtn.addEventListener('click', function () {
 let currentImage = 1;
 
 //mobile view/modal window
-prevBtn.addEventListener('click', function () {
-  if (currentImage == 1) return;
-  currentImage--;
-  productImage.src = `images/image-product-${currentImage}.jpg`;
-  toggleFocus(currentImage);
-  console.log(currentImage);
+allPrevBtn.forEach(btn => {
+  btn.addEventListener('click', function () {
+    if (currentImage == 1) return;
+    currentImage--;
+    allProductImages.forEach(
+      e => (e.src = `images/image-product-${currentImage}.jpg`)
+    );
+    toggleFocus(currentImage);
+    console.log(currentImage);
+  });
 });
 
-nextBtn.addEventListener('click', function () {
-  if (currentImage == 4) return;
-  currentImage++;
-  productImage.src = `images/image-product-${currentImage}.jpg`;
-  console.log(currentImage);
-  toggleFocus(currentImage);
+allNextBtn.forEach(btn => {
+  btn.addEventListener('click', function () {
+    if (currentImage == 4) return;
+    currentImage++;
+    allProductImages.forEach(
+      e => (e.src = `images/image-product-${currentImage}.jpg`)
+    );
+    console.log(currentImage);
+    toggleFocus(currentImage);
+  });
 });
 
 //full view
 allThumbnails.forEach(e => {
   e.addEventListener('click', function () {
     currentImage = +e.dataset.thumbnail;
-    productImage.src = `images/image-product-${currentImage}.jpg`;
+    allProductImages.forEach(
+      e => (e.src = `images/image-product-${currentImage}.jpg`)
+    );
     toggleFocus(currentImage);
   });
 });
@@ -170,3 +184,21 @@ function toggleFocus(curNum) {
       : e.classList.remove('image-selected');
   });
 }
+
+//opening modal with images
+mainImage.addEventListener('click', function () {
+  imagesModal.classList.remove('hidden');
+  darkBg.classList.remove('hidden');
+});
+
+//closing modal
+function closeModal() {
+  imagesModal.classList.add('hidden');
+  darkBg.classList.add('hidden');
+}
+
+document.addEventListener('keydown', function (event) {
+  if (event.key === 'Escape') {
+    closeModal();
+  }
+});

@@ -37,6 +37,7 @@ nav {
   justify-content: space-between;
   align-items: center;
   width: 80%;
+  background-color: white;
   border-bottom: solid 1px hsl(219, 9%, 45%);
 }
 nav .left-nav-side {
@@ -171,51 +172,73 @@ nav .right-nav-side .avatar-img:hover {
 }
 
 .nav-white-bg {
-  position: fixed;
-  z-index: 14;
-  top: 0;
-  left: 0;
-  width: 60vw;
-  height: 100vh;
-  background-color: white;
-  padding: 28px 5%;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 4rem;
+  display: none;
 }
-.nav-white-bg .nav-close {
-  width: 25px;
-  height: 25px;
-  border: none;
-  border-radius: 50%;
-  cursor: pointer;
-}
-.nav-white-bg ul {
-  display: flex;
-  flex-direction: column;
-  align-content: flex-start;
-  gap: 2rem;
-}
-.nav-white-bg ul li {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-content: center;
-  list-style: none;
-  font-size: 2.6rem;
-  font-weight: bold;
-  cursor: pointer;
-  opacity: 0.8;
-  transition: opacity 0.15s;
-  border-bottom: solid 3px hsl(0, 0%, 100%);
-}
-.nav-white-bg ul li:hover {
-  opacity: 1;
-  border-bottom: solid 3px hsl(26, 100%, 55%);
+@media (max-width: 770px) {
+  .nav-white-bg {
+    position: fixed;
+    z-index: 14;
+    top: 0;
+    left: 0;
+    width: 60vw;
+    height: 100vh;
+    background-color: white;
+    padding: 28px 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4rem;
+  }
+  .nav-white-bg .nav-close {
+    width: 25px;
+    height: 25px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  .nav-white-bg ul {
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+    gap: 2rem;
+  }
+  .nav-white-bg ul li {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    list-style: none;
+    font-size: 2.6rem;
+    font-weight: bold;
+    cursor: pointer;
+    opacity: 0.8;
+    transition: opacity 0.15s;
+    border-bottom: solid 3px hsl(0, 0%, 100%);
+  }
+  .nav-white-bg ul li:hover {
+    opacity: 1;
+    border-bottom: solid 3px hsl(26, 100%, 55%);
+  }
 }
 
 .nav-dark-bg {
+  display: none;
+}
+@media (max-width: 770px) {
+  .nav-dark-bg {
+    display: block;
+    position: fixed;
+    z-index: 13;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.8;
+  }
+}
+
+.dark-bg {
   position: fixed;
   z-index: 13;
   top: 0;
@@ -224,6 +247,11 @@ nav .right-nav-side .avatar-img:hover {
   height: 100%;
   background-color: black;
   opacity: 0.8;
+}
+@media (max-width: 770px) {
+  .dark-bg {
+    display: none;
+  }
 }
 
 .nav-open-btn,
@@ -256,6 +284,16 @@ nav .right-nav-side .avatar-img:hover {
 .next-btn:hover,
 .prev-btn:hover {
   background-color: hsl(0, 0%, 100%);
+}
+
+.next-btn svg path,
+.prev-btn svg path {
+  transition: stroke 0.15s;
+}
+
+.next-btn:hover svg path,
+.prev-btn:hover svg path {
+  stroke: hsl(26, 100%, 55%);
 }
 
 .next-btn {
@@ -453,7 +491,7 @@ section .product-description-container {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 1.4rem;
+  gap: 2rem;
   width: 40%;
 }
 section .product-description-container h3 {
@@ -461,7 +499,7 @@ section .product-description-container h3 {
   color: hsl(26, 100%, 55%);
 }
 section .product-description-container h1 {
-  font-size: 3.2rem;
+  font-size: 4.2rem;
 }
 section .product-description-container p {
   font-size: 1.6rem;
@@ -572,6 +610,7 @@ section .product-description-container .interaction-container .select-product-co
 @media (max-width: 770px) {
   section .product-description-container {
     margin-top: 2.5rem;
+    gap: 1.4rem;
     width: 80%;
   }
 }
@@ -583,12 +622,13 @@ section .product-description-container .interaction-container .select-product-co
 @media (max-width: 770px) {
   section {
     width: 100%;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
     padding: 0px;
     flex-direction: column;
   }
 }
 
+.images-modal.hidden,
 nav .right-nav-side .cart-icon-container .product-count.hidden,
 .hidden {
   display: none;
@@ -616,4 +656,93 @@ nav .right-nav-side .cart-icon-container .product-count.hidden,
 .image-selected {
   box-shadow: 0px 0px 0px 4px hsl(26, 100%, 55%);
   opacity: 0.8;
+}
+
+.images-modal {
+  position: absolute;
+  z-index: 20;
+  top: 5%;
+  bottom: 0;
+  margin: auto 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.images-modal .all-images-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  width: 70%;
+}
+.images-modal .all-images-container .close-modal-button {
+  align-self: flex-end;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding-right: 5%;
+  margin-bottom: -1.5rem;
+}
+.images-modal .all-images-container .close-modal-button:hover svg path {
+  transition: fill 0.15s;
+}
+.images-modal .all-images-container .close-modal-button:hover svg path {
+  fill: hsl(26, 100%, 55%);
+}
+.images-modal .all-images-container .product-images-container {
+  display: flex;
+  justify-content: center;
+  width: 95%;
+}
+.images-modal .all-images-container .product-images-container .product-image {
+  width: 95%;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+}
+.images-modal .all-images-container .thumbnails-images-container {
+  display: flex;
+  justify-content: space-between;
+  width: 70%;
+}
+.images-modal .all-images-container .thumbnails-images-container .product-thumbnail {
+  width: 23%;
+  border: none;
+  border-radius: 15%;
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+.images-modal .all-images-container .thumbnails-images-container .product-thumbnail:hover {
+  opacity: 0.8;
+}
+@media (max-width: 770px) {
+  .images-modal .all-images-container .thumbnails-images-container {
+    display: none;
+  }
+}
+.images-modal .all-images-container .next-btn {
+  top: 40%;
+  right: 17%;
+}
+.images-modal .all-images-container .prev-btn {
+  top: 40%;
+  left: 17%;
+}
+.images-modal .all-images-container .next-btn,
+.images-modal .all-images-container .prev-btn {
+  display: block;
+}
+@media (max-width: 770px) {
+  .images-modal .all-images-container {
+    display: none;
+  }
+}
+
+.attribution {
+  font-size: 2rem;
+  margin-top: -20px;
+}
+.attribution a {
+  color: hsl(26, 100%, 55%);
 }/*# sourceMappingURL=main.css.map */

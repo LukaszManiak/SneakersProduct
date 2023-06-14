@@ -49,3 +49,4 @@ Users should be able to:
 ![Screenshot 2](/screenshots/screen2.jpg?raw=true 'Screenshot 2')
 ![Screenshot 3](/screenshots/screen3.jpg?raw=true 'Screenshot 3')
 ![Screenshot 4](/screenshots/screen4.jpg?raw=true 'Screenshot 4')
+![Screenshot 5](/screenshots/screen5.jpg?raw=true 'Screenshot 5')
