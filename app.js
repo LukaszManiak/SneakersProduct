@@ -102,7 +102,15 @@ function productCart(count) {
     +finalCount * 125
   }</span></p>
     </div>
-  <button onClick="deleteProduct()" class="delete-button">
+  <button onClick="function(){
+    cartContainer.innerHTML = '';
+  cartContainer.insertAdjacentHTML('afterbegin', emptyCart());
+  count = 0;
+  finalCount = 0;
+  productCountAlert.innerText = count;
+  cartContainer.classList.toggle('hidden');
+  productCountAlert.classList.add('hidden');
+  }" class="delete-button">
     <img src="images/icon-delete.svg" alt="" />
   </button>
   </div>
