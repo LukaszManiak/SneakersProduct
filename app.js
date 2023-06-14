@@ -199,6 +199,7 @@ function closeModal() {
 
 document.addEventListener('keydown', function (event) {
   if (event.key === 'Escape') {
-    closeModal();
+    imagesModal.classList.add('hidden');
+    darkBg.classList.add('hidden');
   }
 });
