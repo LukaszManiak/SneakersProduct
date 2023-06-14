@@ -5,7 +5,7 @@
   "default": "index.html",
   "scripts": {
     "start": "parcel index.html",
-    "build": "copyfiles -u 1 images/* dist && parcel build index.html --dist-dir ./dist"
+    "build": "copyfiles -u 1 images/* dist/images && parcel build index.html --dist-dir ./dist"
   },
   "author": "Lukasz Maniak",
   "license": "ISC",

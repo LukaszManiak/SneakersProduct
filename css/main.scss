@@ -772,4 +772,8 @@ nav .right-nav-side .cart-icon-container .product-count.hidden,
   a {
     color: color(orange);
   }
+
+  @include mobile {
+    margin-top: 20px;
+  }
 }
