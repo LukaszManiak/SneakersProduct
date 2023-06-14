@@ -147,7 +147,7 @@ allPrevBtn.forEach(btn => {
     if (currentImage == 1) return;
     currentImage--;
     allProductImages.forEach(
-      e => (e.src = `images/image-product-${currentImage}.jpg`)
+      e => (e.src = `image-product-${currentImage}.jpg`)
     );
     toggleFocus(currentImage);
     console.log(currentImage);
@@ -159,7 +159,7 @@ allNextBtn.forEach(btn => {
     if (currentImage == 4) return;
     currentImage++;
     allProductImages.forEach(
-      e => (e.src = `images/image-product-${currentImage}.jpg`)
+      e => (e.src = `image-product-${currentImage}.jpg`)
     );
     console.log(currentImage);
     toggleFocus(currentImage);
@@ -171,7 +171,7 @@ allThumbnails.forEach(e => {
   e.addEventListener('click', function () {
     currentImage = +e.dataset.thumbnail;
     allProductImages.forEach(
-      e => (e.src = `images/image-product-${currentImage}.jpg`)
+      e => (e.src = `image-product-${currentImage}.jpg`)
     );
     toggleFocus(currentImage);
   });
