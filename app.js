@@ -80,7 +80,7 @@ let finalCount = 0;
 cartContainer.insertAdjacentHTML('afterbegin', emptyCart());
 
 //delete product from cart
-const deleteProduct = function () {
+function deleteProduct() {
   cartContainer.innerHTML = '';
   cartContainer.insertAdjacentHTML('afterbegin', emptyCart());
   count = 0;
@@ -88,12 +88,13 @@ const deleteProduct = function () {
   productCountAlert.innerText = count;
   cartContainer.classList.toggle('hidden');
   productCountAlert.classList.add('hidden');
-};
+}
 
 //show cart
 cartBtn.addEventListener('click', function () {
   cartContainer.classList.toggle('hidden');
 });
+
 //case1: returning html for empty cart
 
 function emptyCart() {
