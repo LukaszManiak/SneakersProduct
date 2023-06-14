@@ -17,7 +17,6 @@ const productCountAlert = document.querySelector('.product-count');
 const addToCartBtn = document.querySelector('.add-to-cart-button');
 const deleteFromCartBtn = document.querySelector('.delete-button');
 const cartBtn = document.querySelector('.cart-button');
-
 const thumbnailsContainer = document.querySelector(
   '.thumbnails-images-container'
 );
@@ -74,17 +73,6 @@ removeProductCount.addEventListener('click', function () {
 
 //adding product to cart
 
-//delete product from cart
-function deleteProduct() {
-  cartContainer.innerHTML = '';
-  cartContainer.insertAdjacentHTML('afterbegin', emptyCart());
-  count = 0;
-  finalCount = 0;
-  productCountAlert.innerText = count;
-  cartContainer.classList.toggle('hidden');
-  productCountAlert.classList.add('hidden');
-}
-
 //default parameters
 let cartPrice;
 let finalCount = 0;
@@ -133,6 +121,17 @@ addToCartBtn.addEventListener('click', function () {
     productCountAlert.classList.remove('hidden');
   }
 });
+
+//delete product from cart
+function deleteProduct() {
+  cartContainer.innerHTML = '';
+  cartContainer.insertAdjacentHTML('afterbegin', emptyCart());
+  count = 0;
+  finalCount = 0;
+  productCountAlert.innerText = count;
+  cartContainer.classList.toggle('hidden');
+  productCountAlert.classList.add('hidden');
+}
 
 //show cart
 cartBtn.addEventListener('click', function () {
