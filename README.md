@@ -29,7 +29,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [GitHub](https://github.com/Mejniak/Frontend-Mentor-Ecommerce-product-page-main)
-<!-- - Live Site URL: [Netlify](https://bookmarklanding-lukas.netlify.app/) -->
+- Live Site URL: [Netlify](https://e-commerce-lukas.netlify.app/)
 
 ### Built with
 
