@@ -79,8 +79,6 @@ let cartPrice;
 let finalCount = 0;
 cartContainer.insertAdjacentHTML('afterbegin', emptyCart());
 
-deleteFromCartBtn.addEventListener('click', deleteProduct);
-
 //delete product from cart
 function deleteProduct() {
   cartContainer.innerHTML = '';
