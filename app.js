@@ -79,6 +79,21 @@ let cartPrice;
 let finalCount = 0;
 cartContainer.insertAdjacentHTML('afterbegin', emptyCart());
 
+//delete product from cart
+const deleteProduct = function () {
+  cartContainer.innerHTML = '';
+  cartContainer.insertAdjacentHTML('afterbegin', emptyCart());
+  count = 0;
+  finalCount = 0;
+  productCountAlert.innerText = count;
+  cartContainer.classList.toggle('hidden');
+  productCountAlert.classList.add('hidden');
+};
+
+//show cart
+cartBtn.addEventListener('click', function () {
+  cartContainer.classList.toggle('hidden');
+});
 //case1: returning html for empty cart
 
 function emptyCart() {
@@ -121,22 +136,6 @@ addToCartBtn.addEventListener('click', function () {
     productCount.innerText = count;
     productCountAlert.classList.remove('hidden');
   }
-});
-
-//delete product from cart
-const deleteProduct = function () {
-  cartContainer.innerHTML = '';
-  cartContainer.insertAdjacentHTML('afterbegin', emptyCart());
-  count = 0;
-  finalCount = 0;
-  productCountAlert.innerText = count;
-  cartContainer.classList.toggle('hidden');
-  productCountAlert.classList.add('hidden');
-};
-
-//show cart
-cartBtn.addEventListener('click', function () {
-  cartContainer.classList.toggle('hidden');
 });
 
 //showing selected image
