@@ -15,7 +15,7 @@ const productCount = document.querySelector('.count-p');
 const cartContainer = document.querySelector('.cart-container');
 const productCountAlert = document.querySelector('.product-count');
 const addToCartBtn = document.querySelector('.add-to-cart-button');
-const deleteFromCartBtn = document.querySelector('.delete-button');
+
 const cartBtn = document.querySelector('.cart-button');
 const thumbnailsContainer = document.querySelector(
   '.thumbnails-images-container'
@@ -120,6 +120,9 @@ addToCartBtn.addEventListener('click', function () {
     productCount.innerText = count;
     productCountAlert.classList.remove('hidden');
   }
+
+  const deleteButton = document.querySelector('.delete-button');
+  deleteButton.addEventListener('click', deleteProduct);
 });
 
 //delete product from cart
