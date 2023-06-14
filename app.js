@@ -102,7 +102,7 @@ function productCart(count) {
     +finalCount * 125
   }</span></p>
     </div>
-  <button onClick="deleteProduct()" class="delete-button">
+  <button onClick="deleteProduct" class="delete-button">
     <img src="images/icon-delete.svg" alt="" />
   </button>
   </div>
