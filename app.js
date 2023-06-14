@@ -119,10 +119,9 @@ addToCartBtn.addEventListener('click', function () {
     count = 0;
     productCount.innerText = count;
     productCountAlert.classList.remove('hidden');
+    const deleteButton = document.querySelector('.delete-button');
+    deleteButton.addEventListener('click', deleteProduct);
   }
-
-  const deleteButton = document.querySelector('.delete-button');
-  deleteButton.addEventListener('click', deleteProduct);
 });
 
 //delete product from cart
