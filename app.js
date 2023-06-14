@@ -74,6 +74,17 @@ removeProductCount.addEventListener('click', function () {
 
 //adding product to cart
 
+//delete product from cart
+function deleteProduct() {
+  cartContainer.innerHTML = '';
+  cartContainer.insertAdjacentHTML('afterbegin', emptyCart());
+  count = 0;
+  finalCount = 0;
+  productCountAlert.innerText = count;
+  cartContainer.classList.toggle('hidden');
+  productCountAlert.classList.add('hidden');
+}
+
 //default parameters
 let cartPrice;
 let finalCount = 0;
@@ -89,17 +100,6 @@ function emptyCart() {
 }
 //case2:returning html for product in cart
 function productCart(count) {
-  //delete product from cart
-  function deleteProduct() {
-    cartContainer.innerHTML = '';
-    cartContainer.insertAdjacentHTML('afterbegin', emptyCart());
-    count = 0;
-    finalCount = 0;
-    productCountAlert.innerText = count;
-    cartContainer.classList.toggle('hidden');
-    productCountAlert.classList.add('hidden');
-  }
-
   finalCount += +count;
   return `
   
