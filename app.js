@@ -31,6 +31,7 @@ const allPrevBtn = document.querySelectorAll('.prev-btn');
 const mainImage = document.querySelector('.main-image');
 
 const imagesModal = document.querySelector('.images-modal');
+const closeModalBtn = document.querySelector('.close-modal-button');
 
 // nav menu
 
@@ -196,6 +197,8 @@ function closeModal() {
   imagesModal.classList.add('hidden');
   darkBg.classList.add('hidden');
 }
+
+closeModalBtn.addEventListener('click', closeModal);
 
 document.addEventListener('keydown', function (event) {
   if (event.key === 'Escape') {
