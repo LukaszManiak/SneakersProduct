@@ -102,7 +102,7 @@ function productCart(count) {
     +finalCount * 125
   }</span></p>
     </div>
-  <button onClick="function(){
+  <button onClick="function deleteProduct(){
     cartContainer.innerHTML = '';
   cartContainer.insertAdjacentHTML('afterbegin', emptyCart());
   count = 0;
