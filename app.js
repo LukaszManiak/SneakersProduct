@@ -116,6 +116,7 @@ addToCartBtn.addEventListener('click', function () {
   } else {
     cartContainer.insertAdjacentHTML('afterbegin', productCart(count));
     productCountAlert.innerText = finalCount;
+    setLocalStorage(finalCount);
     count = 0;
     productCount.innerText = count;
     productCountAlert.classList.remove('hidden');
@@ -130,6 +131,7 @@ function deleteProduct() {
   cartContainer.insertAdjacentHTML('afterbegin', emptyCart());
   count = 0;
   finalCount = 0;
+  setLocalStorage(count);
   productCountAlert.innerText = count;
   cartContainer.classList.toggle('hidden');
   productCountAlert.classList.add('hidden');
@@ -138,6 +140,27 @@ function deleteProduct() {
 //show cart
 cartBtn.addEventListener('click', function () {
   cartContainer.classList.toggle('hidden');
+});
+
+//saving product count in local storage
+function setLocalStorage(count) {
+  localStorage.setItem('productCount', +count);
+}
+
+//set product count from local storage onload
+window.addEventListener('load', event => {
+  cartContainer.innerHTML = '';
+  const localCount = localStorage.getItem('productCount');
+  if (!+localCount) {
+    productCountAlert.classList.add('hidden');
+    cartContainer.insertAdjacentHTML('afterbegin', emptyCart());
+  } else {
+    cartContainer.insertAdjacentHTML('afterbegin', productCart(+localCount));
+    count = +localCount;
+    finalCount = +localCount;
+    productCountAlert.innerText = finalCount;
+    productCountAlert.classList.remove('hidden');
+  }
 });
 
 //showing selected image
