@@ -160,6 +160,8 @@ window.addEventListener('load', event => {
     finalCount = +localCount;
     productCountAlert.innerText = finalCount;
     productCountAlert.classList.remove('hidden');
+    const deleteButton = document.querySelector('.delete-button');
+    deleteButton.addEventListener('click', deleteProduct);
   }
 });
 
