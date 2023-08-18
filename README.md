@@ -25,6 +25,7 @@ Users should be able to:
 - Switch the large product image by clicking on the small thumbnail images
 - Add items to the cart
 - View the cart and remove items from it
+- Save the product count in the local storage
 
 ### Links
 
