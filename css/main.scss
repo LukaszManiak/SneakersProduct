@@ -335,6 +335,7 @@ nav {
 
 .main-margin-top {
   margin-top: -25vh;
+
   @include mobile {
     margin-top: -30vh;
   }
