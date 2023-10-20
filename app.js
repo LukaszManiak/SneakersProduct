@@ -136,6 +136,7 @@ function deleteProduct() {
   productCountAlert.innerText = count;
   cartContainer.classList.toggle('hidden');
   productCountAlert.classList.add('hidden');
+  mainContainer.classList.toggle('main-margin-top');
 }
 
 //show cart
