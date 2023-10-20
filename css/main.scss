@@ -334,7 +334,10 @@ nav {
 }
 
 .main-margin-top {
-  margin-top: -22vh;
+  margin-top: -20vh;
+  @include mobile {
+    margin-top: -25vh;
+  }
 }
 
 .cart-container {
