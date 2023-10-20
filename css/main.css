@@ -315,7 +315,12 @@ nav .right-nav-side .avatar-img:hover {
 }
 
 .main-margin-top {
-  margin-top: -25vh;
+  margin-top: -20.8vh;
+}
+@media (max-width: 770px) {
+  .main-margin-top {
+    margin-top: -30vh;
+  }
 }
 
 .cart-container {
