@@ -6,6 +6,7 @@ const navClose = document.querySelector('.nav-close-btn');
 const navWhiteBg = document.querySelector('.nav-white-bg');
 const navDarkBg = document.querySelector('.nav-dark-bg');
 const darkBg = document.querySelector('.dark-bg');
+const mainContainer = document.querySelector('.main-container');
 
 const addProductCount = document.querySelector('.add-count-button');
 const removeProductCount = document.querySelector('.remove-count-button');
@@ -140,6 +141,7 @@ function deleteProduct() {
 //show cart
 cartBtn.addEventListener('click', function () {
   cartContainer.classList.toggle('hidden');
+  mainContainer.classList.toggle('main-margin-top');
 });
 
 //saving product count in local storage

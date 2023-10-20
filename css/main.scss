@@ -60,6 +60,9 @@ main {
   justify-content: center;
   align-items: center;
   overflow-x: hidden;
+  @include mobile {
+    margin-bottom: 30px;
+  }
 }
 
 nav {
@@ -330,10 +333,15 @@ nav {
   left: 10px;
 }
 
+.main-margin-top {
+  margin-top: -25vh;
+}
+
 .cart-container {
-  position: absolute;
-  top: 100px;
-  right: 5%;
+  position: sticky;
+  top: 90px;
+  right: -32vw;
+  transform: translate(32vw, -20px);
   z-index: 10;
   width: 300px;
   height: 200px;
@@ -436,9 +444,9 @@ nav {
   }
 
   @include mobile {
-    top: 80px;
-    left: 50%;
-    transform: translate(-50%, 0%);
+    // top: 80px;
+    right: 0%;
+    transform: translate(0%, 0%);
     width: 90vw;
   }
 }
@@ -773,5 +781,9 @@ nav .right-nav-side .cart-icon-container .product-count.hidden,
   text-align: center;
   a {
     color: color(orange);
+  }
+
+  @include mobile {
+    margin: 0px 40px;
   }
 }
